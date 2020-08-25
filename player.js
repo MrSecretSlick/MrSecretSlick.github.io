@@ -57,11 +57,11 @@ function changeVolume(e) {
   lastVolume = volume;
 }
 function neatTime(time) {
-  // var hours = Math.floor((time % 86400)/3600)
+  var hours = Math.floor((time % 86400)/3600)
   var minutes = Math.floor(time % 3600 / 60);
   var seconds = Math.floor(time % 60);
   seconds = seconds > 9 ? seconds : `0${seconds}`;
-  return `${minutes}:${seconds}`;
+  return `${hours}:{minutes}:${seconds}`;
 }
 function updateProgress(e) {
   progressFill.style.width = `${video.currentTime / video.duration * 100}%`;
