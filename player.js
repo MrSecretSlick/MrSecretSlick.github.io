@@ -61,7 +61,11 @@ function neatTime(time) {
   var minutes = Math.floor(time % 3600 / 60);
   var seconds = Math.floor(time % 60);
   seconds = seconds > 9 ? seconds : `0${seconds}`;
-  return `${hours}:{minutes}:${seconds}`;
+  minutes = minutes > 9 ? minutes : `0${minutes}`;
+  if(hours>0)
+    return `${hours}:${minutes}:${seconds}`;
+  else
+    return `${minutes}:${seconds}`;
 }
 function updateProgress(e) {
   progressFill.style.width = `${video.currentTime / video.duration * 100}%`;
