@@ -133,7 +133,7 @@ function handleKeypress(e) {
       toggleFullscreen();
       break;
     case "h":
-      window.location.replace("#");
+      window.location.replace("/");
       break;
 		  
     default:
