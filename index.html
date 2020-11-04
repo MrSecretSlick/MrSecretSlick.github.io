@@ -24,7 +24,14 @@ html, body {
   box-sizing: border-box;
   line-height: 1.4;
 }
-
+.example::-webkit-scrollbar { /* Chrome, Safari and Opera */
+  display: none;
+}
+.example {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+    
 img {
   max-width: 100%;
 }
