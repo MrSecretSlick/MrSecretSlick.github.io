@@ -479,12 +479,19 @@ footer {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script>
   
   <script type="text/javascript">
+    var titleList = new Array("batmanbegins","coachcarter","johnwick","johnwick:chapter2","johnwick:chapter3-parabellum","joker","kingsman:thegoldencircle", "kingsman:thesecretservice", "limitless", "readyplayerone", "scarface", "semi-pro", "taken", "taken2", "taken3", "theaviator","thebigshort", "thedarkknight","thedarkknightrises","thekingofstatenisland", "therevenant", "thetown", "thewizardoflies", "thewolfofwallstreet", "zodiac")
   $('#search-overlay-form').submit(function() {
       var value = $('input').val();
       value = $.trim(value);
       value = value.replace(/ /g,'');
-      this.action = 'http://vid2go.github.io/' + value;
-      return true;
+      value = value.toLowerCase();
+      if (titleList.includes(value)) {
+        this.action = 'http://vid2go.github.io/' + value;
+        return true;
+      }
+        $('input').val("");
+        document.getElementById('input').placeholder="Not Found";
+        return false;
   })
   </script>
   
